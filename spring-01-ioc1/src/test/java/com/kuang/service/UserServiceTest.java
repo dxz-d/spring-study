@@ -1,5 +1,9 @@
 package com.kuang.service;
 
+import com.kuang.dao.impl.UserDaoImpl;
+import com.kuang.dao.impl.UserDaoMysqlImpl;
+import com.kuang.dao.impl.UserDaoSqlServiceImpl;
+import com.kuang.service.impl.UserServiceImpl;
 import org.junit.Test;
 
 /***
@@ -15,6 +19,26 @@ public class UserServiceTest {
     public void getUser() {
 
         UserService userService = new UserServiceImpl();
-        userService.getUser();
+        userService.getUser1();
+        userService.getMysql();
+        userService.getOracle();
+    }
+
+    /**
+     * set简化
+     */
+    @Test
+    public void setSimplify() {
+        UserService userService = new UserServiceImpl();
+
+        ((UserServiceImpl) userService).setUserDao(new UserDaoImpl());
+        ((UserServiceImpl) userService).getUser();
+
+        System.out.println("=================");
+        ((UserServiceImpl) userService).setUserDao(new UserDaoMysqlImpl());
+        ((UserServiceImpl) userService).getUser();
+
+        ((UserServiceImpl) userService).setUserDao(new UserDaoSqlServiceImpl());
+        ((UserServiceImpl) userService).getUser();
     }
 }

@@ -1,4 +1,6 @@
-package com.kuang.dao;
+package com.kuang.dao.impl;
+
+import com.kuang.dao.UserDao;
 
 /***
  * @description 持久层实现类UserDaoImpl
@@ -11,6 +13,4 @@ public class UserDaoImpl implements UserDao {
     public void getUser() {
         System.out.println("获取用户数据");
     }
-
-
 }

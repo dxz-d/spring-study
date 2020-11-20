@@ -1,5 +1,7 @@
 package com.kuang.service;
 
+import com.kuang.dao.impl.UserDaoImpl;
+
 /***
  * @description 业务层接口UserService
  * @author diaoxiuze
@@ -7,8 +9,19 @@ package com.kuang.service;
  */
 public interface UserService {
 
+
     /**
      * 获取用户
      */
-    public void getUser();
+    public void getUser1();
+
+    /**
+     * 获取mysql
+     */
+    public void getMysql();
+
+    /**
+     * 获取oracle
+     */
+    public void getOracle();
 }
