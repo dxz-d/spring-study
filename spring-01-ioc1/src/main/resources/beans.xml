@@ -16,4 +16,8 @@
         <!-- 引用另外一个bean，不是用value而是用ref -->
         <property name="userDao" ref="OracleImpl"/>
     </bean>
+
+    <bean id="user" class="com.kuang.pojo.User">
+        <property name="name" value="狂神"/>
+    </bean>
 </beans>
