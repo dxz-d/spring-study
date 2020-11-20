@@ -5,6 +5,7 @@ import com.kuang.dao.impl.UserDaoMysqlImpl;
 import com.kuang.dao.impl.UserDaoSqlServiceImpl;
 import com.kuang.pojo.Hello;
 import com.kuang.pojo.User;
+import com.kuang.pojo.UserT;
 import com.kuang.service.impl.UserServiceImpl;
 import javafx.application.Application;
 import org.junit.Test;
@@ -59,5 +60,17 @@ public class UserServiceTest {
         User user = (User) applicationContext.getBean("user");
         // 调用对象方法
         user.show();
+    }
+
+    UserT userT = (UserT) applicationContext.getBean("userT");
+
+    /**
+     * IOC有参构造：
+     * 第一种
+     * 根据index参数下标设置
+     */
+    @Test
+    public void iocArgmentIndex() {
+        userT.show();
     }
 }

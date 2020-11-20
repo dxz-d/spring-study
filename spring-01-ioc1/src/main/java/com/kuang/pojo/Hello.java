@@ -22,7 +22,7 @@ public class Hello {
     }
 
     public Hello() {
-
+        System.out.println("Hello的无参构造方法");
     }
 
     @Override
