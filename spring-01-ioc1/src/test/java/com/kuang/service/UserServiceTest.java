@@ -3,8 +3,11 @@ package com.kuang.service;
 import com.kuang.dao.impl.UserDaoImpl;
 import com.kuang.dao.impl.UserDaoMysqlImpl;
 import com.kuang.dao.impl.UserDaoSqlServiceImpl;
+import com.kuang.pojo.Hello;
 import com.kuang.service.impl.UserServiceImpl;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***
  * @description 业务层UserService测试
@@ -40,5 +43,15 @@ public class UserServiceTest {
 
         ((UserServiceImpl) userService).setUserDao(new UserDaoSqlServiceImpl());
         ((UserServiceImpl) userService).getUser();
+    }
+
+
+    @Test
+    public void test() {
+        //解析beans.xml文件 , 生成管理相应的Bean对象
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        //getBean : 参数即为spring配置文件中bean的id .
+        Hello hello = (Hello) context.getBean("hello");
+        hello.show();
     }
 }
