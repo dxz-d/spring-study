@@ -9,4 +9,11 @@
         <property name="name" value="Spring"/>
     </bean>
 
+    <bean id="OracleImpl" class="com.kuang.dao.impl.UserDaoOracleImpl"/>
+
+    <bean id="ServiceImpl" class="com.kuang.service.impl.UserServiceImpl">
+        <!-- 这里的name并不是属性，而是set后面的那部分，首字母小写 -->
+        <!-- 引用另外一个bean，不是用value而是用ref -->
+        <property name="userDao" ref="OracleImpl"/>
+    </bean>
 </beans>
